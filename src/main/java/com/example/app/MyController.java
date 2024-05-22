@@ -17,4 +17,5 @@ public class MyController {
 
         return List.of(entry, entry1, entry2);
     }
+
 }

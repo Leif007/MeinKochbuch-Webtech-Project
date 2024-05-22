@@ -15,6 +15,7 @@ package com.example.app;
             this.cookingTime = cookingTime;
             this.ingredients = ingredients;
             this.servings = servings;
+
         }
 
         public String getName() {
@@ -40,6 +41,8 @@ package com.example.app;
         public int getServings() {
             return servings;
         }
+
+
     }
 
 
