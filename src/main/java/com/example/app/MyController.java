@@ -1,6 +1,7 @@
 package com.example.app;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "https://frontend-meinkochbuch-ka32.onrender.com/")
 public class MyController {
     @GetMapping("/kochbuch")
     public List<Recipe> greeting() {
