@@ -17,6 +17,7 @@ package com.example.app;
             this.servings = servings;
 
         }
+        public Recipe() {} // leerer Konstruktor von Hibernate benötigt
 
         public String getName() {
             return name;
