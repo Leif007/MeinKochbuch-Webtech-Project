@@ -1,6 +1,14 @@
 package com.example.app;
 
-    public class Recipe {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@Entity
+public class Recipe {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private long id;
         private String name;
         private String description;
         private int prepTime;
@@ -8,7 +16,8 @@ package com.example.app;
         private String ingredients;
         private int servings;
 
-        public Recipe(String name, String description, int prepTime, int cookingTime, String ingredients, int servings){
+        public Recipe(Long id,String name, String description, int prepTime, int cookingTime, String ingredients, int servings){
+            this.id = id;
             this.name = name;
             this.description = description;
             this. prepTime = prepTime;

@@ -15,9 +15,10 @@ public class RecipeService {
         return repo.save(recipe);
     }
 
-    public Recipe getRecipeById(Long id) {
+    public Recipe get(Long id) {
         return repo.findById(id).orElseThrow(RuntimeException::new);
     }
+
 
 
 }

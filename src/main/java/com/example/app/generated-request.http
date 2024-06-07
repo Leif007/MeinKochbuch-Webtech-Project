@@ -1,0 +1,11 @@
+POST http://localhost:8080/recipe
+Content-Type: application/json
+
+{
+  "name":"Pasta Carbonara",
+  "description":"A delicious pasta dish with bacon and eggs",
+  "prepTime": 10,
+  "cookingTime": 10,
+  "ingredients":"pasta",
+  "servings": 10
+}
