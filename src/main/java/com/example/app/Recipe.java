@@ -18,12 +18,13 @@ public class Recipe {
         private String dishType;
         private String mealTime;
         private String dietType;
+        private String picture;
 
 
 
 
 
-        public Recipe(Long id,String name, String description, int preperationTime, int cookingTime, String ingredients, String instructions, String dishType, String mealTime, String dietType) {
+        public Recipe(Long id,String name, String description, int preperationTime, int cookingTime, String ingredients, String instructions, String dishType, String mealTime, String dietType, String picture) {
             this.id = id;
             this.name = name;
             this.description = description;
@@ -34,6 +35,8 @@ public class Recipe {
             this.dishType = dishType;
             this.mealTime = mealTime;
             this.dietType = dietType;
+            this.picture = picture;
+
 
 
         }
