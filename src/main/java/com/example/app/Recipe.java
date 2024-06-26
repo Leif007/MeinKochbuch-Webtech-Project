@@ -11,19 +11,30 @@ public class Recipe {
         private long id;
         private String name;
         private String description;
-        private int prepTime;
+        private int preperationTime;
         private int cookingTime;
         private String ingredients;
-        private int servings;
+        private String instructions;
+        private String dishType;
+        private String mealTime;
+        private String dietType;
 
-        public Recipe(Long id,String name, String description, int prepTime, int cookingTime, String ingredients, int servings){
+
+
+
+
+        public Recipe(Long id,String name, String description, int preperationTime, int cookingTime, String ingredients, String instructions, String dishType, String mealTime, String dietType) {
             this.id = id;
             this.name = name;
             this.description = description;
-            this. prepTime = prepTime;
+            this.preperationTime = preperationTime;
             this.cookingTime = cookingTime;
             this.ingredients = ingredients;
-            this.servings = servings;
+            this.instructions = instructions;
+            this.dishType = dishType;
+            this.mealTime = mealTime;
+            this.dietType = dietType;
+
 
         }
         public Recipe() {} // leerer Konstruktor von Hibernate benötigt
@@ -37,7 +48,7 @@ public class Recipe {
         }
 
         public int getPrepTime() {
-            return prepTime;
+            return preperationTime;
         }
 
         public int getCookingTime() {
@@ -48,9 +59,22 @@ public class Recipe {
             return ingredients;
         }
 
-        public int getServings() {
-            return servings;
+        public String getInstructions() {
+            return instructions;
         }
+
+        public String getDishType() {
+            return dishType;
+        }
+
+        public String getMealTime() {
+            return mealTime;
+        }
+
+        public String getDietType() {
+            return dietType;
+        }
+
 
 
     }
