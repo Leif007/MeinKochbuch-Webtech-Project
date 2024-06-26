@@ -11,7 +11,7 @@ public class Recipe {
         private long id;
         private String name;
         private String description;
-        private int preperationTime;
+        private int prepTime;
         private int cookingTime;
         private String ingredients;
         private String instructions;
@@ -24,11 +24,11 @@ public class Recipe {
 
 
 
-        public Recipe(Long id,String name, String description, int preperationTime, int cookingTime, String ingredients, String instructions, String dishType, String mealTime, String dietType, String picture) {
+        public Recipe(Long id,String name, String description, int prepTime, int cookingTime, String ingredients, String instructions, String dishType, String mealTime, String dietType, String picture) {
             this.id = id;
             this.name = name;
             this.description = description;
-            this.preperationTime = preperationTime;
+            this.prepTime = prepTime;
             this.cookingTime = cookingTime;
             this.ingredients = ingredients;
             this.instructions = instructions;
@@ -51,7 +51,7 @@ public class Recipe {
         }
 
         public int getPrepTime() {
-            return preperationTime;
+            return prepTime;
         }
 
         public int getCookingTime() {
