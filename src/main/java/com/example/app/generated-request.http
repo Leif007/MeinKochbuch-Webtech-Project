@@ -4,8 +4,13 @@ Content-Type: application/json
 {
   "name":"Pasta Carbonara",
   "description":"A delicious pasta dish with bacon and eggs",
-  "prepTime": 10,
+  "preperationTime": 10,
   "cookingTime": 10,
   "ingredients":"pasta",
-  "servings": 10
+  "instructions": "Cook pasta, fry bacon, mix eggs, add to pasta, serve.",
+  "dishType": "Main",
+  "mealTime": "Dinner",
+  "dietType": "Meat",
+  "picture": "https://www.google.com"
+
 }
