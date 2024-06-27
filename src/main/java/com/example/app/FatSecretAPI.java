@@ -13,6 +13,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +31,7 @@ public class FatSecretAPI {
     private static final String API_SECRET = "d89171995ff346bfa99b5fe8695f74a2";
     private static final String API_URL = "https://platform.fatsecret.com/rest/server.api";
 
+    Logger logger = LoggerFactory.getLogger(FatSecretAPI.class);
 
     public String searchFood(String food) {
         try {
@@ -104,6 +107,7 @@ public class FatSecretAPI {
     @GetMapping("/searchAndGetDetails/{foodNames}")
     public List<String> searchAndGetDetails(@PathVariable String foodNames) {
         try {
+            logger.info("Received foodNames: " + foodNames);
 
             String[] foods = foodNames.split(",");
 
@@ -123,6 +127,8 @@ public class FatSecretAPI {
                 String foodId = rootNode.path("foods").path(0).path("food_id").asText();
 
                 String detailsResponse = getFoodDetails(foodId);
+
+                logger.info("Details for " + foodName + ": " + detailsResponse);
 
                 foodDetailsList.add(detailsResponse);
             }
