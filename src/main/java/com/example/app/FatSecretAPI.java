@@ -104,7 +104,7 @@ public class FatSecretAPI {
 
         return null; // return null or a default value if there was an error
     }
-    @GetMapping("/searchAndGetDetails/{foodNames}")
+    @GetMapping("/api/searchAndGetDetails/{foodNames}")
     public List<String> searchAndGetDetails(@PathVariable String foodNames) {
         try {
             logger.info("Received foodNames: " + foodNames);
