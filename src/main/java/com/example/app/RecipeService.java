@@ -20,7 +20,7 @@ public class RecipeService {
     }
 
 
-    public Iterable<Recipe> getAllRecepies() {
+    public Iterable<Recipe> getAllRecipes() {
         return repo.findAll();
     }
 }
