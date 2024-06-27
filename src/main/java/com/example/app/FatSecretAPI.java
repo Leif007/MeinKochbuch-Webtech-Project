@@ -107,9 +107,11 @@ public class FatSecretAPI {
     @GetMapping("/api/searchAndGetDetails/{foodNames}")
     public List<String> searchAndGetDetails(@PathVariable String foodNames) {
         try {
-            logger.info("Received foodNames: " + foodNames);
+            String foodNamesString = String.join(",", foodNames);
 
-            String[] foods = foodNames.split(",");
+            logger.info("Received foodNames: " + foodNamesString);
+
+            String[] foods = foodNamesString.split(",");
 
 
             List<String> foodDetailsList = new ArrayList<>();
