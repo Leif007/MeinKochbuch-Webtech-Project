@@ -44,10 +44,7 @@ public class RecipeController {
         return service.getAllRecepies();
     }
 
-    @GetMapping("/recipes")
-    public Iterable<Recipe> getAllRecipes() {
-        return service.getAllRecepies();
-    }
+
 
 
 }
