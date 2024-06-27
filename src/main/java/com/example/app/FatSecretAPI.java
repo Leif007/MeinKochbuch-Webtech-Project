@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -100,22 +101,33 @@ public class FatSecretAPI {
 
         return null; // return null or a default value if there was an error
     }
-    @GetMapping("/searchAndGetDetails/{foodName}")
-    public String searchAndGetDetails(String foodName) {
+    @GetMapping("/searchAndGetDetails/{foodNames}")
+    public List<String> searchAndGetDetails(@PathVariable String foodNames) {
         try {
-            // Search for the food by name
-            String searchResponse = searchFood(foodName);
 
-            // Parse the response to get the ID of the first food item
-            ObjectMapper mapper = new ObjectMapper();
-            JsonNode rootNode = mapper.readTree(searchResponse);
-            String foodId = rootNode.path("foods").path(0).path("food_id").asText();
+            String[] foods = foodNames.split(",");
 
-            // Get the details of the food item by its ID
-            String detailsResponse = getFoodDetails(foodId);
 
-            // Return the details
-            return detailsResponse;
+            List<String> foodDetailsList = new ArrayList<>();
+
+
+            for (String foodName : foods) {
+
+                foodName = foodName.trim();
+
+
+                String searchResponse = searchFood(foodName);
+
+                ObjectMapper mapper = new ObjectMapper();
+                JsonNode rootNode = mapper.readTree(searchResponse);
+                String foodId = rootNode.path("foods").path(0).path("food_id").asText();
+
+                String detailsResponse = getFoodDetails(foodId);
+
+                foodDetailsList.add(detailsResponse);
+            }
+
+            return foodDetailsList;
         } catch (Exception e) {
             e.printStackTrace();
         }
